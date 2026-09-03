@@ -7,7 +7,7 @@ import { SiteNav } from '@/components/site-nav';
 
 type Stat = { label: string; value: string; sourceUrl: string; sourceTitle: string };
 type Report = { verdict: string; summary: string; strengths: string[]; gaps: string[]; nextSteps: string[] };
-type SavedReport = { school: string; program: string; publishedStats: Stat[]; report: Report; retrievedAt: string; gpa: number; benchmark: ReturnType<typeof summarizeBenchmark> };
+type SavedReport = { school: string; program: string; publishedStats: Stat[]; report: Report; retrievedAt: string; gpa: number; simulated?: boolean; globalCoverage?: number; benchmark: ReturnType<typeof summarizeBenchmark> };
 
 type FormState = { school: string; program: string; gpa: string; testScore: string; notes: string };
 const examples: FormState[] = [

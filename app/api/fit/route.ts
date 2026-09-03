@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { simulateFit } from '@/lib/simulations';
 
 type SearchResult = { title?: string; link?: string; snippet?: string };
 type PublishedStats = { label: string; value: string; sourceUrl: string; sourceTitle: string };
@@ -36,13 +37,17 @@ export async function POST(request: Request) {
     const cached = cache.get(cacheKey);
     if (cached && cached.expires > Date.now()) return NextResponse.json(cached.body);
 
-    const serpKey = process.env.SERPAPI_KEY;
-    const groqKey = process.env.GROQ_API_KEY;
-    if (!serpKey || !groqKey) return NextResponse.json({ error: 'Live research is not connected yet. Add the SerpApi and Groq keys to enable reports.' }, { status: 503 });
+    const serpKey = process.env.SERPAPI_KEY?.trim();
+    const groqKey = process.env.GROQ_API_KEY?.trim();
+    if (!serpKey || !groqKey) return NextResponse.json(simulateFit(input));
 
     const query = `${input.school} ${input.program} admissions average GPA acceptance rate ${input.testScore ?? ''}`;
-    const searchResponse = await fetch(`https://serpapi.com/search.json?engine=google&q=${encodeURIComponent(query)}&api_key=${serpKey}`, { cache: 'no-store' });
-    if (!searchResponse.ok) return NextResponse.json({ error: 'The live admissions search could not be completed.' }, { status: 502 });
+    const searchResponse = await fetch(`https://serpapi.com/search.json?engine=google&q=${encodeURIComponent(query)}&api_key=${encodeURIComponent(serpKey)}`, { cache: 'no-store' });
+    if (!searchResponse.ok) {
+      const providerError = (await searchResponse.json().catch(() => null)) as { error?: string } | null;
+      console.error('SerpApi request failed', searchResponse.status, providerError?.error ?? 'Unknown provider error');
+      return NextResponse.json(simulateFit(input));
+    }
     const searchData = (await searchResponse.json()) as { organic_results?: SearchResult[] };
     const results = (searchData.organic_results ?? []).slice(0, 8);
     const publishedStats = extractStats(results);
@@ -50,7 +55,7 @@ export async function POST(request: Request) {
 
     const prompt = `You are an honest admissions research analyst. Create a concise fit report for ${input.school}, ${input.program}. Student GPA: ${input.gpa}. Test score: ${input.testScore || 'not provided'}. Notes: ${input.notes || 'none'}.\n\nRetrieved evidence:\n${evidence}\n\nRules: Use only evidence above. Never invent a statistic, source, range, or admission probability. If evidence is missing, say it is unavailable. Return JSON with exactly these keys: verdict (one of "stronger alignment", "mixed alignment", "more context needed"), summary (2 sentences), strengths (array of 2-4 strings), gaps (array of 1-3 strings), nextSteps (array of 2-4 strings). Do not include markdown.`;
     const groqResponse = await fetch('https://api.groq.com/openai/v1/chat/completions', { method: 'POST', headers: { Authorization: `Bearer ${groqKey}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ model: 'llama-3.3-70b-versatile', temperature: 0.1, response_format: { type: 'json_object' }, messages: [{ role: 'user', content: prompt }] }) });
-    if (!groqResponse.ok) return NextResponse.json({ error: 'The fit analysis could not be completed.' }, { status: 502 });
+    if (!groqResponse.ok) return NextResponse.json(simulateFit(input));
     const groqData = (await groqResponse.json()) as { choices?: Array<{ message?: { content?: string } }> };
     const report = JSON.parse(groqData.choices?.[0]?.message?.content ?? '{}');
     const body = { school: input.school, program: input.program, publishedStats, report, retrievedAt: new Date().toISOString() };

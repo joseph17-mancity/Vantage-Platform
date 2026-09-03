@@ -21,6 +21,7 @@ type SavedCheck = {
   publishedStats: Stat[];
   report: RealityReport;
   retrievedAt: string;
+  simulated?: boolean;
   benchmark: ReturnType<typeof summarizeBenchmark>;
 };
 
@@ -199,6 +200,7 @@ export function RealityCheck() {
                   <div className="eyebrow">Reality check / {formatDate(current.retrievedAt)}</div>
                   <h3 className="serif mt-2 text-2xl font-bold">{current.school}</h3>
                   <p className="text-sm text-[#6e6a61]">{current.gradeLevel} · GPA {current.gpa.toFixed(2)}</p>
+                  {current.simulated && <p className="mt-3 border-l-2 border-[#b23a2e] bg-[#f7e2dc] px-3 py-2 text-xs font-bold text-[#8f2d24]">SIMULATED GLOBAL RESEARCH / Replace with live sources before making decisions.</p>}
                 </div>
                 <span className={`stamp ${standingStyle.stamp}`}>{standingStyle.label}</span>
               </div>
@@ -206,7 +208,7 @@ export function RealityCheck() {
               <p className="mt-4 text-sm leading-7 text-[#555149]">{current.report.summary}</p>
 
               <div className="mt-5 border-l-2 border-[#b23a2e] bg-[#eee7da] p-4">
-                <div className="eyebrow">Published range</div>
+                <div className="eyebrow">{current.simulated ? 'Simulated global range' : 'Published range'}</div>
                 <p className="mt-2 text-sm leading-6">{current.report.publishedRange}</p>
                 {current.publishedStats.length > 0 && (
                   <div className="mt-3 space-y-2">
@@ -215,7 +217,7 @@ export function RealityCheck() {
                         <span className="text-[#6e6a61]">{stat.label}</span>
                         <span className="text-right font-bold">
                           <span className="block">{stat.value}</span>
-                          <a href={stat.sourceUrl} target="_blank" rel="noreferrer" className="text-xs font-normal text-[#b23a2e] underline">Source ↗</a>
+                          {stat.sourceUrl && <a href={stat.sourceUrl} target="_blank" rel="noreferrer" className="text-xs font-normal text-[#b23a2e] underline">Source ↗</a>}
                         </span>
                       </div>
                     ))}

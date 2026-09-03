@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { simulateRealityCheck } from '@/lib/simulations';
 
 type SearchResult = { title?: string; link?: string; snippet?: string };
 type PublishedStats = { label: string; value: string; sourceUrl: string; sourceTitle: string };
@@ -44,13 +45,17 @@ export async function POST(request: Request) {
     const cached = cache.get(cacheKey);
     if (cached && cached.expires > Date.now()) return NextResponse.json(cached.body);
 
-    const serpKey = process.env.SERPAPI_KEY;
-    const groqKey = process.env.GROQ_API_KEY;
-    if (!serpKey || !groqKey) return NextResponse.json({ error: 'Live research is not connected yet. Add the SerpApi and Groq keys to enable reports.' }, { status: 503 });
+    const serpKey = process.env.SERPAPI_KEY?.trim();
+    const groqKey = process.env.GROQ_API_KEY?.trim();
+    if (!serpKey || !groqKey) return NextResponse.json(simulateRealityCheck(input));
 
     const query = `${input.school} admissions average GPA acceptance rate SAT ACT requirements`;
-    const searchResponse = await fetch(`https://serpapi.com/search.json?engine=google&q=${encodeURIComponent(query)}&api_key=${serpKey}`, { cache: 'no-store' });
-    if (!searchResponse.ok) return NextResponse.json({ error: 'The live admissions search could not be completed.' }, { status: 502 });
+    const searchResponse = await fetch(`https://serpapi.com/search.json?engine=google&q=${encodeURIComponent(query)}&api_key=${encodeURIComponent(serpKey)}`, { cache: 'no-store' });
+    if (!searchResponse.ok) {
+      const providerError = (await searchResponse.json().catch(() => null)) as { error?: string } | null;
+      console.error('SerpApi request failed', searchResponse.status, providerError?.error ?? 'Unknown provider error');
+      return NextResponse.json(simulateRealityCheck(input));
+    }
     const searchData = (await searchResponse.json()) as { organic_results?: SearchResult[] };
     const results = (searchData.organic_results ?? []).slice(0, 8);
     const publishedStats = extractStats(results);
@@ -94,7 +99,7 @@ Do not include markdown.`;
       }),
     });
 
-    if (!groqResponse.ok) return NextResponse.json({ error: 'The reality check could not be completed.' }, { status: 502 });
+    if (!groqResponse.ok) return NextResponse.json(simulateRealityCheck(input));
     const groqData = (await groqResponse.json()) as { choices?: Array<{ message?: { content?: string } }> };
     const report = JSON.parse(groqData.choices?.[0]?.message?.content ?? '{}');
     const body = { school: input.school, gradeLevel: input.gradeLevel, gpa: input.gpa, publishedStats, report, retrievedAt: new Date().toISOString() };
