@@ -1,0 +1,620 @@
+{
+  "continents": [
+    {
+      "name": "North America",
+      "countries": [
+        {
+          "name": "United States",
+          "provinces": [
+            {
+              "name": "California",
+              "institutions": [
+                { "name": "Stanford University", "type": "university", "city": "Stanford" },
+                { "name": "University of California, Berkeley", "type": "university", "city": "Berkeley" },
+                { "name": "University of California, Los Angeles", "type": "university", "city": "Los Angeles" },
+                { "name": "California Institute of Technology", "type": "university", "city": "Pasadena" },
+                { "name": "Pomona College", "type": "college", "city": "Claremont" },
+                { "name": "Harvey Mudd College", "type": "college", "city": "Claremont" },
+                { "name": "Occidental College", "type": "college", "city": "Los Angeles" }
+              ]
+            },
+            {
+              "name": "Massachusetts",
+              "institutions": [
+                { "name": "Massachusetts Institute of Technology", "type": "university", "city": "Cambridge" },
+                { "name": "Harvard University", "type": "university", "city": "Cambridge" },
+                { "name": "Boston University", "type": "university", "city": "Boston" },
+                { "name": "Amherst College", "type": "college", "city": "Amherst" },
+                { "name": "Williams College", "type": "college", "city": "Williamstown" },
+                { "name": "Wellesley College", "type": "college", "city": "Wellesley" }
+              ]
+            },
+            {
+              "name": "New York",
+              "institutions": [
+                { "name": "Columbia University", "type": "university", "city": "New York" },
+                { "name": "New York University", "type": "university", "city": "New York" },
+                { "name": "Cornell University", "type": "university", "city": "Ithaca" },
+                { "name": "Barnard College", "type": "college", "city": "New York" },
+                { "name": "Vassar College", "type": "college", "city": "Poughkeepsie" }
+              ]
+            },
+            {
+              "name": "Illinois",
+              "institutions": [
+                { "name": "University of Chicago", "type": "university", "city": "Chicago" },
+                { "name": "Northwestern University", "type": "university", "city": "Evanston" },
+                { "name": "University of Illinois Urbana-Champaign", "type": "university", "city": "Urbana" },
+                { "name": "Grinnell College", "type": "college", "city": "Grinnell" }
+              ]
+            },
+            {
+              "name": "Texas",
+              "institutions": [
+                { "name": "Rice University", "type": "university", "city": "Houston" },
+                { "name": "University of Texas at Austin", "type": "university", "city": "Austin" },
+                { "name": "Texas A&M University", "type": "university", "city": "College Station" },
+                { "name": "Southwestern University", "type": "college", "city": "Georgetown" }
+              ]
+            },
+            {
+              "name": "Michigan",
+              "institutions": [
+                { "name": "University of Michigan", "type": "university", "city": "Ann Arbor" },
+                { "name": "Michigan State University", "type": "university", "city": "East Lansing" },
+                { "name": "Kalamazoo College", "type": "college", "city": "Kalamazoo" }
+              ]
+            },
+            {
+              "name": "Washington",
+              "institutions": [
+                { "name": "University of Washington", "type": "university", "city": "Seattle" },
+                { "name": "Washington State University", "type": "university", "city": "Pullman" },
+                { "name": "Whitman College", "type": "college", "city": "Walla Walla" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Canada",
+          "provinces": [
+            {
+              "name": "Ontario",
+              "institutions": [
+                { "name": "University of Toronto", "type": "university", "city": "Toronto" },
+                { "name": "University of Waterloo", "type": "university", "city": "Waterloo" },
+                { "name": "McMaster University", "type": "university", "city": "Hamilton" },
+                { "name": "Queen's University", "type": "university", "city": "Kingston" }
+              ]
+            },
+            {
+              "name": "British Columbia",
+              "institutions": [
+                { "name": "University of British Columbia", "type": "university", "city": "Vancouver" },
+                { "name": "Simon Fraser University", "type": "university", "city": "Burnaby" },
+                { "name": "University of Victoria", "type": "university", "city": "Victoria" }
+              ]
+            },
+            {
+              "name": "Quebec",
+              "institutions": [
+                { "name": "McGill University", "type": "university", "city": "Montreal" },
+                { "name": "Université de Montréal", "type": "university", "city": "Montreal" },
+                { "name": "Concordia University", "type": "university", "city": "Montreal" }
+              ]
+            },
+            {
+              "name": "Alberta",
+              "institutions": [
+                { "name": "University of Alberta", "type": "university", "city": "Edmonton" },
+                { "name": "University of Calgary", "type": "university", "city": "Calgary" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Mexico",
+          "provinces": [
+            {
+              "name": "Ciudad de México",
+              "institutions": [
+                { "name": "Universidad Nacional Autónoma de México", "type": "university", "city": "Mexico City" },
+                { "name": "Instituto Politécnico Nacional", "type": "university", "city": "Mexico City" }
+              ]
+            },
+            {
+              "name": "Jalisco",
+              "institutions": [
+                { "name": "Universidad de Guadalajara", "type": "university", "city": "Guadalajara" }
+              ]
+            },
+            {
+              "name": "Nuevo León",
+              "institutions": [
+                { "name": "Tecnológico de Monterrey", "type": "university", "city": "Monterrey" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "South America",
+      "countries": [
+        {
+          "name": "Brazil",
+          "provinces": [
+            {
+              "name": "São Paulo",
+              "institutions": [
+                { "name": "University of São Paulo", "type": "university", "city": "São Paulo" },
+                { "name": "Universidade Estadual de Campinas", "type": "university", "city": "Campinas" }
+              ]
+            },
+            {
+              "name": "Rio de Janeiro",
+              "institutions": [
+                { "name": "Federal University of Rio de Janeiro", "type": "university", "city": "Rio de Janeiro" },
+                { "name": "Pontifical Catholic University of Rio de Janeiro", "type": "university", "city": "Rio de Janeiro" }
+              ]
+            },
+            {
+              "name": "Minas Gerais",
+              "institutions": [
+                { "name": "Federal University of Minas Gerais", "type": "university", "city": "Belo Horizonte" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Argentina",
+          "provinces": [
+            {
+              "name": "Buenos Aires",
+              "institutions": [
+                { "name": "University of Buenos Aires", "type": "university", "city": "Buenos Aires" },
+                { "name": "Universidad Torcuato Di Tella", "type": "university", "city": "Buenos Aires" }
+              ]
+            },
+            {
+              "name": "Córdoba",
+              "institutions": [
+                { "name": "National University of Córdoba", "type": "university", "city": "Córdoba" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Chile",
+          "provinces": [
+            {
+              "name": "Región Metropolitana",
+              "institutions": [
+                { "name": "Pontificia Universidad Católica de Chile", "type": "university", "city": "Santiago" },
+                { "name": "University of Chile", "type": "university", "city": "Santiago" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Colombia",
+          "provinces": [
+            {
+              "name": "Cundinamarca",
+              "institutions": [
+                { "name": "Universidad Nacional de Colombia", "type": "university", "city": "Bogotá" },
+                { "name": "Universidad de los Andes", "type": "university", "city": "Bogotá" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Europe",
+      "countries": [
+        {
+          "name": "United Kingdom",
+          "provinces": [
+            {
+              "name": "England",
+              "institutions": [
+                { "name": "University of Oxford", "type": "university", "city": "Oxford" },
+                { "name": "University of Cambridge", "type": "university", "city": "Cambridge" },
+                { "name": "Imperial College London", "type": "university", "city": "London" },
+                { "name": "University College London", "type": "university", "city": "London" },
+                { "name": "London School of Economics", "type": "university", "city": "London" },
+                { "name": "University of Manchester", "type": "university", "city": "Manchester" }
+              ]
+            },
+            {
+              "name": "Scotland",
+              "institutions": [
+                { "name": "University of Edinburgh", "type": "university", "city": "Edinburgh" },
+                { "name": "University of St Andrews", "type": "university", "city": "St Andrews" },
+                { "name": "University of Glasgow", "type": "university", "city": "Glasgow" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Germany",
+          "provinces": [
+            {
+              "name": "Bavaria",
+              "institutions": [
+                { "name": "Technical University of Munich", "type": "university", "city": "Munich" },
+                { "name": "Ludwig Maximilian University of Munich", "type": "university", "city": "Munich" }
+              ]
+            },
+            {
+              "name": "Berlin",
+              "institutions": [
+                { "name": " Humboldt University of Berlin", "type": "university", "city": "Berlin" },
+                { "name": "Technical University of Berlin", "type": "university", "city": "Berlin" }
+              ]
+            },
+            {
+              "name": "Baden-Württemberg",
+              "institutions": [
+                { "name": "Heidelberg University", "type": "university", "city": "Heidelberg" },
+                { "name": "University of Stuttgart", "type": "university", "city": "Stuttgart" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "France",
+          "provinces": [
+            {
+              "name": "Île-de-France",
+              "institutions": [
+                { "name": "École Polytechnique", "type": "university", "city": "Palaiseau" },
+                { "name": "Sorbonne University", "type": "university", "city": "Paris" },
+                { "name": "Sciences Po", "type": "university", "city": "Paris" }
+              ]
+            },
+            {
+              "name": "Auvergne-Rhône-Alpes",
+              "institutions": [
+                { "name": "Grenoble Alpes University", "type": "university", "city": "Grenoble" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Netherlands",
+          "provinces": [
+            {
+              "name": "South Holland",
+              "institutions": [
+                { "name": "Delft University of Technology", "type": "university", "city": "Delft" },
+                { "name": "Leiden University", "type": "university", "city": "Leiden" }
+              ]
+            },
+            {
+              "name": "North Holland",
+              "institutions": [
+                { "name": "University of Amsterdam", "type": "university", "city": "Amsterdam" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Italy",
+          "provinces": [
+            {
+              "name": "Lazio",
+              "institutions": [
+                { "name": "Sapienza University of Rome", "type": "university", "city": "Rome" }
+              ]
+            },
+            {
+              "name": "Lombardy",
+              "institutions": [
+                { "name": "Politecnico di Milano", "type": "university", "city": "Milan" },
+                { "name": "University of Milan", "type": "university", "city": "Milan" }
+              ]
+            },
+            {
+              "name": "Tuscany",
+              "institutions": [
+                { "name": "University of Bologna", "type": "university", "city": "Bologna" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Switzerland",
+          "provinces": [
+            {
+              "name": "Zurich",
+              "institutions": [
+                { "name": "ETH Zurich", "type": "university", "city": "Zurich" },
+                { "name": "University of Zurich", "type": "university", "city": "Zurich" }
+              ]
+            },
+            {
+              "name": "Vaud",
+              "institutions": [
+                { "name": "École Polytechnique Fédérale de Lausanne", "type": "university", "city": "Lausanne" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Sweden",
+          "provinces": [
+            {
+              "name": "Stockholm",
+              "institutions": [
+                { "name": "KTH Royal Institute of Technology", "type": "university", "city": "Stockholm" },
+                { "name": "Stockholm University", "type": "university", "city": "Stockholm" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Asia",
+      "countries": [
+        {
+          "name": "China",
+          "provinces": [
+            {
+              "name": "Beijing",
+              "institutions": [
+                { "name": "Tsinghua University", "type": "university", "city": "Beijing" },
+                { "name": "Peking University", "type": "university", "city": "Beijing" }
+              ]
+            },
+            {
+              "name": "Shanghai",
+              "institutions": [
+                { "name": "Shanghai Jiao Tong University", "type": "university", "city": "Shanghai" },
+                { "name": "Fudan University", "type": "university", "city": "Shanghai" }
+              ]
+            },
+            {
+              "name": "Zhejiang",
+              "institutions": [
+                { "name": "Zhejiang University", "type": "university", "city": "Hangzhou" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "India",
+          "provinces": [
+            {
+              "name": "Karnataka",
+              "institutions": [
+                { "name": "Indian Institute of Science", "type": "university", "city": "Bengaluru" },
+                { "name": "Indian Institute of Management Bangalore", "type": "university", "city": "Bengaluru" }
+              ]
+            },
+            {
+              "name": "Maharashtra",
+              "institutions": [
+                { "name": "Indian Institute of Technology Bombay", "type": "university", "city": "Mumbai" }
+              ]
+            },
+            {
+              "name": "Tamil Nadu",
+              "institutions": [
+                { "name": "Indian Institute of Technology Madras", "type": "university", "city": "Chennai" }
+              ]
+            },
+            {
+              "name": "Delhi",
+              "institutions": [
+                { "name": "Indian Institute of Technology Delhi", "type": "university", "city": "New Delhi" },
+                { "name": "University of Delhi", "type": "university", "city": "New Delhi" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Japan",
+          "provinces": [
+            {
+              "name": "Tokyo",
+              "institutions": [
+                { "name": "University of Tokyo", "type": "university", "city": "Tokyo" },
+                { "name": "Tokyo Institute of Technology", "type": "university", "city": "Tokyo" }
+              ]
+            },
+            {
+              "name": "Kyoto",
+              "institutions": [
+                { "name": "Kyoto University", "type": "university", "city": "Kyoto" }
+              ]
+            },
+            {
+              "name": "Osaka",
+              "institutions": [
+                { "name": "Osaka University", "type": "university", "city": "Osaka" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "South Korea",
+          "provinces": [
+            {
+              "name": "Seoul",
+              "institutions": [
+                { "name": "Seoul National University", "type": "university", "city": "Seoul" },
+                { "name": "Yonsei University", "type": "university", "city": "Seoul" },
+                { "name": "Korea University", "type": "university", "city": "Seoul" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Singapore",
+          "provinces": [
+            {
+              "name": "Singapore",
+              "institutions": [
+                { "name": "National University of Singapore", "type": "university", "city": "Singapore" },
+                { "name": "Nanyang Technological University", "type": "university", "city": "Singapore" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Africa",
+      "countries": [
+        {
+          "name": "South Africa",
+          "provinces": [
+            {
+              "name": "Western Cape",
+              "institutions": [
+                { "name": "University of Cape Town", "type": "university", "city": "Cape Town" },
+                { "name": "Stellenbosch University", "type": "university", "city": "Stellenbosch" }
+              ]
+            },
+            {
+              "name": "Gauteng",
+              "institutions": [
+                { "name": "University of the Witwatersrand", "type": "university", "city": "Johannesburg" },
+                { "name": "University of Pretoria", "type": "university", "city": "Pretoria" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Egypt",
+          "provinces": [
+            {
+              "name": "Cairo",
+              "institutions": [
+                { "name": "American University in Cairo", "type": "university", "city": "Cairo" },
+                { "name": "Cairo University", "type": "university", "city": "Cairo" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Nigeria",
+          "provinces": [
+            {
+              "name": "Lagos",
+              "institutions": [
+                { "name": "University of Lagos", "type": "university", "city": "Lagos" }
+              ]
+            },
+            {
+              "name": "Oyo",
+              "institutions": [
+                { "name": "University of Ibadan", "type": "university", "city": "Ibadan" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Kenya",
+          "provinces": [
+            {
+              "name": "Nairobi",
+              "institutions": [
+                { "name": "University of Nairobi", "type": "university", "city": "Nairobi" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Morocco",
+          "provinces": [
+            {
+              "name": "Rabat-Salé-Kénitra",
+              "institutions": [
+                { "name": "Mohammed V University", "type": "university", "city": "Rabat" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Oceania",
+      "countries": [
+        {
+          "name": "Australia",
+          "provinces": [
+            {
+              "name": "New South Wales",
+              "institutions": [
+                { "name": "University of Sydney", "type": "university", "city": "Sydney" },
+                { "name": "University of New South Wales", "type": "university", "city": "Sydney" }
+              ]
+            },
+            {
+              "name": "Victoria",
+              "institutions": [
+                { "name": "University of Melbourne", "type": "university", "city": "Melbourne" },
+                { "name": "Monash University", "type": "university", "city": "Melbourne" }
+              ]
+            },
+            {
+              "name": "Queensland",
+              "institutions": [
+                { "name": "University of Queensland", "type": "university", "city": "Brisbane" }
+              ]
+            },
+            {
+              "name": "Australian Capital Territory",
+              "institutions": [
+                { "name": "Australian National University", "type": "university", "city": "Canberra" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "New Zealand",
+          "provinces": [
+            {
+              "name": "Auckland",
+              "institutions": [
+                { "name": "University of Auckland", "type": "university", "city": "Auckland" }
+              ]
+            },
+            {
+              "name": "Canterbury",
+              "institutions": [
+                { "name": "University of Canterbury", "type": "university", "city": "Christchurch" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Antarctica",
+      "countries": [
+        {
+          "name": "Antarctica",
+          "provinces": [
+            {
+              "name": "Ross Dependency",
+              "institutions": [
+                { "name": "Scott Base Research Station", "type": "university", "city": "McMurdo Sound" }
+              ]
+            },
+            {
+              "name": "Australian Antarctic Territory",
+              "institutions": [
+                { "name": "Davis Station Research Outpost", "type": "university", "city": "Ingrid Christensen Coast" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

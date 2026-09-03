@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 100">
+  <circle cx="50" cy="50" r="46" fill="#B23A2E"/>
+  <svg x="26" y="26" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+  </svg>
+  <text x="116" y="63" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="44" letter-spacing="1.5" fill="#1B1B18">VANTAGE</text>
+</svg>
